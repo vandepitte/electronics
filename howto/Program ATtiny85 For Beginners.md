@@ -20,7 +20,7 @@ The long story: https://www.arduino.cc/en/Tutorial/BuiltInExamples/ArduinoISP
 ## Setup ciruit
 
 MISO, MOSI and SCK are availabe on multiple pins on Arduino UNO. Besides the AVR ISP
-Using the Arduino Uno, there are 2 options. You either use the AVR ISP pins (the group of 6 pins on the Arduino Uno board labeled with ICSP) or you use the numbered pins on the board. I chose for the latter because I always forget the AVR ISP pinout.
+Using the Arduino Uno, there are 2 options. You either use the AVR ISP pins (the group of 6 pins on the Arduino Uno board labeled with ICSP) or you use the numbered pins on the board. Just use what you prefer on Arduino Uno. The AVR ISP pinout is described in the comments of the ArduinoISP sketch. Otherwise, use the following wiring instructions:
 
 Arduino Uno -> ATtiny85:
 
@@ -32,12 +32,6 @@ Arduino Uno -> ATtiny85:
 * GND -> 4 (GND)
 
 TODO: circuit image
-
-## Select the sketch you want to upload
-
-For example, I used a sketch to send an RF signal.
-
-TODO: link to the code
 
 ## Add Board
 
@@ -59,7 +53,22 @@ Then add the Boards
 * Set Clock: Tools > Clock: 1Mhz is more than sufficient (not sure how much attiny85 takes) 
 * Set Port: Tools > Port
 
+## Burn bootloader? No
+
+In instructions I found on the web, they say that you have to burn the bootloader. This seemed odd to me because the bootloader is in fact doing the job of an ISP: on startup it checks if there's new code and if so, it copies the code and runs it.
+
+I tried uploading a sketch (next step) without burning a bootloader on a brand new ATtiny85 and it seems to work just fine.
+
+I do think you need to burn the bootloader if you want to upload sketches without using the intermediate Arduino ISP.
+
 ## Upload the sketch
+
+
+Take any sketch. The simplest to start with is the blink sketch. Just make sure you change LED_BUILTIN to an existing port on the ATtiny
+
+I used a sketch to send an RF signal.
+
+TODO: link to the code
 
 What happens? 
 
