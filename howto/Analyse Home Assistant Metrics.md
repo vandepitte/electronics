@@ -36,7 +36,7 @@ library(tidyverse)
 library(readr)
 library(ggplot2)
 
-states <- read_csv("/Users/pieterv/projects/personal/mi/states.csv", na = "unknown")
+states <- read_csv("states.csv", na = "unknown")
 
 states %>% 
   filter(entity_id == "sensor.ble_temperature_xiaomi_hygro_thermometer_living_room") %>%
