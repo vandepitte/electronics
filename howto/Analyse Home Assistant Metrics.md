@@ -1,4 +1,4 @@
-Instead of setting up an infrastructure with InfluxDb, Panorama or others, the KISS way is: 
+Instead of setting up an infrastructure with InfluxDb, Prometheus or others, the KISS way is: 
 
 * Make sure you installed the SSH & Web Terminal Addon
 * Configure SSH
